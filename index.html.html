@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Api Noreen 💗</title>
+<style>
+:root{--burgundy:#541329;--wine:#721d3b;--rose:#d987a3;--pink:#f7d6e0;--cream:#fff6ee;--gold:#e8c98f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top,#762744 0,#350b1b 55%,#210610 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:45px 18px;position:relative;overflow:hidden}
+.hero-inner{max-width:850px;z-index:1}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;color:var(--gold);font:12px Arial,sans-serif}
+h1{font-size:clamp(2.5rem,7vw,5.7rem);line-height:1.04;margin:20px 0;color:#fff1f4}
+h1 span{color:var(--pink);font-style:italic}
+.subtitle{font-size:clamp(1rem,2.4vw,1.3rem);line-height:1.8;color:#f6dce5;max-width:650px;margin:0 auto 28px}
+.btn{background:var(--pink);color:#4b1026;padding:13px 22px;border-radius:30px;font-weight:bold;box-shadow:0 7px 24px #16030b55;transition:.2s;margin:5px}
+.btn:hover{transform:translateY(-3px);background:#fff0f4}
+.btn.outline{background:transparent;color:var(--cream);border:1px solid var(--gold)}
+.floating{position:absolute;font-size:25px;opacity:.65;animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-28px) rotate(10deg)}}
+section{padding:75px 18px;max-width:1050px;margin:auto}
+.section-head{text-align:center;margin-bottom:35px}
+.kicker{color:var(--gold);font:12px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase}
+h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0;color:#ffeaf0}
+.section-head p{color:#e9cbd5;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card{background:linear-gradient(145deg,#6c1e39dd,#3c0c20ee);border:1px solid #d98aa344;border-radius:22px;padding:24px;box-shadow:0 12px 28px #15030b35}
+.card .emoji{font-size:35px}
+.card h3{color:#ffdbe5;margin:12px 0}
+.card p{color:#f1dce2;line-height:1.7}
+.secret{display:none;margin-top:17px;padding:16px;border-radius:14px;background:#fff0f4;color:#51152b;line-height:1.7}
+.secret.show{display:block;animation:pop .35s ease}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+.paper{background:var(--cream);color:#4a1428;padding:clamp(24px,5vw,48px);border-radius:6px 24px 6px 24px;box-shadow:0 18px 45px #15030b55}
+.paper h3{font-size:1.7rem;color:#721e3c}
+.paper p{font-size:1.08rem;line-height:1.9}
+.paper .signature{font-style:italic;color:#8b3451}
+.quizbox{max-width:700px;margin:auto;background:#fff4f0;color:#4b1026;border-radius:24px;padding:clamp(22px,5vw,38px)}
+.quizbox h3{font-size:1.6rem}
+.quiz-question{font-size:1.15rem;font-weight:bold;line-height:1.6}
+.answers{display:grid;gap:10px;margin:20px 0}
+.answer{padding:13px 15px;border-radius:12px;border:1px solid #d9a7b7;background:#fff;color:#4b1026;text-align:left}
+.answer:hover{background:#f8dce5}
+.answer.selected{background:#681b35;color:white}
+#quizFeedback{min-height:28px;line-height:1.6}
+.progress{height:7px;background:#ead1d9;border-radius:20px;overflow:hidden;margin:20px 0}
+.progress span{display:block;height:100%;background:#8b294b;width:0;transition:.3s}
+.center{text-align:center}
+.big-heart{font-size:48px;animation:heartbeat 1.4s infinite}
+@keyframes heartbeat{50%{transform:scale(1.15)}}
+#finalMessage{display:none}
+#finalMessage.show{display:block;animation:pop .5s}
+footer{text-align:center;padding:35px 18px 55px;color:#e9cbd5;line-height:1.8}
+footer strong{color:var(--pink)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#fff0f4;color:#4b1026;padding:12px 18px;border-radius:20px;display:none;z-index:9;box-shadow:0 6px 20px #0004;max-width:90%;text-align:center}
+@media(max-width:560px){section{padding:55px 16px}.card{padding:20px}.hero{min-height:90vh}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="floating" style="top:12%;left:9%">💗</span><span class="floating" style="top:25%;right:10%;animation-delay:1s">✨</span>
+  <span class="floating" style="bottom:18%;left:15%;animation-delay:2s">🌷</span><span class="floating" style="bottom:12%;right:13%;animation-delay:3s">💌</span>
+  <div class="hero-inner">
+    <div class="eyebrow">A little website made with lots of respect</div>
+    <h1>For our lovely<br><span>Api Noreen</span> 💗</h1>
+    <p class="subtitle" id="typing"></p>
+    <button class="btn" onclick="document.getElementById('surprises').scrollIntoView()">Open Your Surprises 🎁</button>
+    <button class="btn outline" onclick="showToast('Official announcement: Api Noreen is an absolutely iconic teacher! 🏆')">Important Announcement 📢</button>
+  </div>
+</header>
+
+<section id="surprises">
+  <div class="section-head"><div class="kicker">Chapter 01 · Little surprises</div><h2>Pick a surprise, Api! 🎁</h2><p>Warning: opening these may cause smiling, laughing, and a tiny amount of emotional damage. 😂</p></div>
+  <div class="grid">
+    <article class="card"><div class="emoji">💌</div><h3>Secret Wish</h3><p>A tiny message that has been hiding from you.</p><button class="btn" onclick="reveal('secret1')">Unlock the wish</button><div class="secret" id="secret1">Dear Api Noreen, may your days be peaceful, your tea always be hot, your markers never dry, and your students remember their homework at least once in a lifetime. You deserve so much happiness! 💗</div></article>
+    <article class="card"><div class="emoji">🏆</div><h3>Teacher Award</h3><p>Because ordinary certificates are not enough.</p><button class="btn" onclick="reveal('secret2')">Reveal my award</button><div class="secret" id="secret2">🏅 Awarded to Api Noreen: “The Legend Who Explains One Topic 7 Times Without Throwing the Register.” Valid forever. Salary bonus: unlimited respect and imaginary chocolates. 🍫</div></article>
+    <article class="card"><div class="emoji">🤫</div><h3>Top Secret</h3><p>Api, promise not to tell the principal.</p><button class="btn" onclick="reveal('secret3')">Shhh... open it</button><div class="secret" id="secret3">Breaking news: the class gets 100% more peaceful when Api Noreen says, “I am waiting.” Even the ceiling fan starts behaving. 😂 Please keep this superpower safe!</div></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="kicker">Chapter 02 · Certified classroom comedy</div><h2>Funny lines for Api Noreen 😂</h2><p>These jokes are lovingly prepared. No students were harmed during this imaginary homework session.</p></div>
+  <div class="grid">
+    <article class="card"><div class="emoji">📚</div><h3>Homework Department</h3><p>“Homework is like a boomerang. You throw it away, and somehow it comes back.”</p></article>
+    <article class="card"><div class="emoji">👀</div><h3>The Teacher Look</h3><p>“Api doesn't need a microphone. One look from her can silence a whole stadium.”</p></article>
+    <article class="card"><div class="emoji">📝</div><h3>Surprise Test</h3><p>“Api: This test is easy. Students: So is saying goodbye to our marks.”</p></article>
+    <article class="card"><div class="emoji">🔋</div><h3>Teacher Energy</h3><p>“Teachers run on patience, chai, and the mysterious power of saying ‘last warning’ five times.”</p></article>
+    <article class="card"><div class="emoji">⏰</div><h3>Late Students</h3><p>“Student: Sorry Api, traffic was crazy. Api: Beta, you live two streets away.”</p></article>
+    <article class="card"><div class="emoji">🤓</div><h3>Class Genius</h3><p>“When Api says ‘Any questions?’ the whole class suddenly becomes a statue museum.”</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="kicker">Chapter 03 · A little appreciation</div><h2>A letter just for you 💌</h2><p>Some words are small, but the feelings behind them are huge.</p></div>
+  <div class="paper">
+    <h3>Dear Api Noreen, 🌷</h3>
+    <p>Maybe we do not say it every day, but your kindness, patience, and the way you guide us mean a lot. A good teacher does more than explain lessons from a book. A good teacher makes people feel supported, encourages them to try again, and makes even a difficult day feel a little easier.</p>
+    <p>Thank you for being friendly, for sharing your knowledge, and for bringing your own special energy into the classroom. We hope life gives you the same kindness that you give to others, along with peaceful mornings, happy surprises, lots of laughter, and chai that never gets cold! ☕</p>
+    <p>And please remember: even when your students act like their brains are on airplane mode, they still appreciate you more than they can explain. 😂💗</p>
+    <p><strong>You are not just a teacher; you are a lovely person who makes learning feel warmer.</strong></p>
+    <p class="signature">With lots of respect, smiles, and good wishes — from your student 💗</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="kicker">Chapter 04 · The extremely serious quiz</div><h2>How well do you know Api? 🧠</h2><p>This quiz is scientifically 0% serious and 100% for fun.</p></div>
+  <div class="quizbox">
+    <div class="progress"><span id="progressBar"></span></div>
+    <div id="quizArea">
+      <div class="quiz-question" id="question">Loading your very important quiz...</div>
+      <div class="answers" id="answers"></div>
+      <div id="quizFeedback"></div>
+      <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Next question ➜</button>
+    </div>
+    <div id="quizResult" style="display:none;text-align:center">
+      <div style="font-size:48px">🎉</div><h3>Quiz complete!</h3><p id="resultText"></p>
+      <button class="btn" onclick="restartQuiz()">Play again 🔁</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="kicker">Chapter 05 · Open only when ready</div><h2>The mystery envelope ✉️</h2><p>Api Noreen, this envelope contains a very important official document.</p></div>
+  <div class="center">
+    <div style="font-size:85px">✉️</div>
+    <button class="btn" onclick="reveal('envelope')">Open the envelope 💌</button>
+    <div class="secret" id="envelope" style="max-width:700px;margin:22px auto;text-align:left">
+      <h3>OFFICIAL NOTICE 📜</h3>
+      <p>Dear Api Noreen, you are hereby required to accept unlimited respect, random compliments, peaceful days, endless happiness, and emergency chocolate supplies.</p>
+      <p>Failure to accept this notice will result in your students saying “Api, you are the best!” repeatedly until you smile. 😂💗</p>
+    </div>
+  </div>
+</section>
+
+<section class="center">
+  <div class="section-head"><div class="kicker">Final chapter · One last surprise</div><h2>Ready for the final message? 💖</h2><p>Take a breath, Api. This one is full of good wishes.</p></div>
+  <button class="btn" onclick="finalSurprise()">Reveal the final surprise ✨</button>
+  <div id="finalMessage" class="paper" style="max-width:780px;margin:25px auto">
+    <div class="big-heart">💗</div>
+    <h3>Api Noreen, you are appreciated!</h3>
+    <p>May Allah bless you with happiness, good health, peace, success, and countless reasons to smile. May your worries become lighter, your efforts bring beautiful results, and your heart always feel loved and respected. Ameen. 🤲</p>
+    <p>Thank you for being a friendly teacher and a genuinely special person. Never forget how much good you bring into the lives around you.</p>
+    <p><strong>Stay lovely, stay blessed, and keep being YOU! 🌷</strong></p>
+    <p>And remember: no matter how much homework you give us, we still like you. Mostly. Okay, definitely! 😂💗</p>
+  </div>
+</section>
+
+<footer>
+  Made with <strong>love, laughter, and burgundy vibes</strong> 🍷💗<br>
+  Especially for <strong>Api Noreen</strong> — one of a kind, always appreciated.<br>
+  <small>Tip: You can edit any message in this HTML file to make it more personal.</small>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const intro = "A little corner of the internet made especially for Api Noreen — a friendly teacher, a lovely human, and a certified classroom legend. Ready for some surprises?";
+let charIndex = 0;
+function typeIntro(){
+  const el = document.getElementById('typing');
+  if(charIndex < intro.length){ el.textContent += intro.charAt(charIndex++); setTimeout(typeIntro, 28); }
+}
+typeIntro();
+
+function reveal(id){
+  const el = document.getElementById(id);
+  el.classList.toggle('show');
+  if(el.classList.contains('show')) el.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function showToast(message){
+  const toast=document.getElementById('toast');
+  toast.textContent=message;toast.style.display='block';
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>toast.style.display='none',3500);
+}
+
+const quiz = [
+ {q:"Api says, “This is the last warning.” What is the most likely classroom sequel?",a:["A peaceful silence for 3 seconds","A surprise holiday","Everyone starts dancing","The school bell resigns"],correct:0,feedback:"A peaceful silence... for approximately three seconds! 😂"},
+ {q:"What is a teacher's most magical superpower?",a:["Reading minds through notebooks","Turning chalk into pizza","Pausing time forever","Making homework do itself"],correct:0,feedback:"The notebook has no secrets from a determined teacher! 👀"},
+ {q:"When Api asks, “Did everyone understand?”, what happens?",a:["Everyone becomes suddenly shy","The desks answer first","The walls raise their hands","The clock starts teaching"],correct:0,feedback:"Suddenly, the entire class becomes extremely shy. Classic! 😄"},
+ {q:"What should always be available for a hardworking teacher?",a:["Respect, patience, and chai","A 40-hour meeting","A broken marker","More surprise tests"],correct:0,feedback:"Respect, patience, and a nice cup of chai — the perfect trio. ☕"},
+ {q:"What is the best wish for Api Noreen?",a:["Happiness, peace, and success","More paperwork forever","Markers that dry instantly","A classroom with no chairs"],correct:0,feedback:"Absolutely! Api deserves happiness, peace, success, and lots of smiles. 💗"}
+];
+let qi=0,selected=-1,score=0;
+function renderQuestion(){
+  selected=-1;
+  document.getElementById('question').textContent=(qi+1)+". "+quiz[qi].q;
+  document.getElementById('answers').innerHTML="";
+  document.getElementById('quizFeedback').textContent="";
+  document.getElementById('nextBtn').disabled=true;
+  document.getElementById('nextBtn').textContent=qi===quiz.length-1?"See my result 🎉":"Next question ➜";
+  document.getElementById('progressBar').style.width=(qi/quiz.length*100)+"%";
+  quiz[qi].a.forEach((answer,i)=>{
+    const b=document.createElement('button');b.className='answer';b.textContent=answer;
+    b.onclick=()=>chooseAnswer(i,b);document.getElementById('answers').appendChild(b);
+  });
+}
+function chooseAnswer(i,button){
+  if(selected!==-1)return;
+  selected=i;
+  document.querySelectorAll('.answer').forEach(b=>b.disabled=true);
+  button.classList.add('selected');
+  if(i===quiz[qi].correct)score++;
+  document.getElementById('quizFeedback').textContent=quiz[qi].feedback;
+  document.getElementById('nextBtn').disabled=false;
+}
+function nextQuestion(){
+  if(selected===-1)return;
+  qi++;
+  if(qi<quiz.length){renderQuestion();return;}
+  document.getElementById('quizArea').style.display='none';
+  document.getElementById('quizResult').style.display='block';
+  document.getElementById('progressBar').style.width='100%';
+  let msg=score>=4?"Api Noreen, you have officially passed the Fun Teacher Vibe Check with flying colours! 🏆":score>=2?"Very nice! You know the classroom vibes. Please collect your imaginary chocolate. 🍫":"This quiz was a little chaotic, but your teacher appreciation is still 100%! 💗";
+  document.getElementById('resultText').textContent="Your score: "+score+" out of "+quiz.length+". "+msg;
+}
+function restartQuiz(){qi=0;selected=-1;score=0;document.getElementById('quizArea').style.display='block';document.getElementById('quizResult').style.display='none';renderQuestion();}
+function finalSurprise(){
+  const msg=document.getElementById('finalMessage');msg.classList.add('show');
+  msg.scrollIntoView({behavior:'smooth',block:'center'});
+  showToast('Final surprise unlocked for Api Noreen! 💗');
+  for(let i=0;i<14;i++){
+    const s=document.createElement('span');s.textContent=['💗','✨','🌷','💖'][i%4];
+    s.style.position='fixed';s.style.left=Math.random()*100+'vw';s.style.top='-30px';s.style.fontSize=(16+Math.random()*18)+'px';s.style.zIndex='10';s.style.pointerEvents='none';
+    document.body.appendChild(s);
+    const duration=1800+Math.random()*1800;
+    s.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(110vh) rotate(300deg)',opacity:0}],{duration:duration,easing:'ease-in'});
+    setTimeout(()=>s.remove(),duration);
+  }
+}
+renderQuestion();
+</script>
+</body>
+</html>
